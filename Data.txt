@@ -1,0 +1,36 @@
+Datos de la víctima
+
+Cuenta a hackear: facebook
+Usuario: -
+Fecha de creacion de la cuenta: 24/05/2015
+Fecha de la creacion de este archivo: 02/02/2001
+
+Nombre: Jose Daniel Quintero Figueroa
+CI: 25601250
+Edad: 19
+Sexo: M
+Fecha de Nacimiento: 05/05/1997
+Tlf: +584123855052
+Correo: josedanq100@gmail.com
+Sobrenombres: Danny, JoseDan, enano
+Pais Natal: Venezuela
+Pais de Residencia: Venezuela
+Zona de Residencia: Caracas
+Nro Favorito: 5
+Color favorito: morado
+Música: Sin Banderas, Reik, Jonathan Moly, Drake Bell
+Mascotas: Bianca, Droopy
+Hermanos: Andres David
+Actividades: Canto, Guitarra, Desarrollador web, Diseñador, Lol
+Hijos: -
+Parejas: Nicole, Ingrid
+Fechas importantes: 26/06/2014, 13/05/2016, 2015
+Deportes: Futbol
+Equipos: Magallanes, Barcelona, TSM, SKT T1
+Animales: Perros, gatos
+Comidas: Pizza, Donas, Pie de limon
+Estudios: Computacion, Matematicas, Musica
+Sitios frecuentes: USB
+Idolos: Drake Bell, Messi, Mark Zuckerberg
+Peliculas y series: Mr. Robot, El comandante, Naruto
+Descripcion fisica: -
