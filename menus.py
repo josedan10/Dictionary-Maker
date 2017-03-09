@@ -5,5 +5,7 @@ def menuPrincipal():
     print("(1) Ver formato del archivo de entrada.")
     print("(2) Generar diccionario personal.")
     print("(3) Salir.")
-    return
 
+    opcion = int(input("\nIntroduzca su opcion: "))
+
+    return opcion

@@ -37,8 +37,7 @@ print("Este programa esta hecho para generar diccionarios en funcion de informac
 
 while True:
 
-    menuPrincipal()
-    opcion = int(input("\nIntroduzca su opcion: "))
+    opcion = menuPrincipal()
 
     if (opcion == 1):
         print("Llamar a la funcion que imprime el formato de archivo")
@@ -55,6 +54,7 @@ while True:
 
         listaDeDatos = armarListaDeDatos(victima)
 
+        print(listaDeDatos)
 
     elif (opcion == 3):
         print("Gracias por usar DictonaryMaker By Jose Quintero\n")

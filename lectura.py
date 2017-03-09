@@ -89,7 +89,7 @@ def leerArchivoDatos(nombreDeArchivo):
     victima.mascotas = victima.mascotas[victima.mascotas.find(":")+2:]
 
     victima.hermanos = file.readline()
-    victima.mascotas = victima.mascotas[victima.mascotas.find(":")+2:]
+    victima.hermanos = victima.hermanos[victima.hermanos.find(":")+2:]
 
     victima.actividades = file.readline()
     victima.actividades = victima.actividades[victima.actividades.find(":")+2:]
@@ -116,7 +116,7 @@ def leerArchivoDatos(nombreDeArchivo):
     victima.comidas = victima.comidas[victima.comidas.find(":")+2:]
 
     victima.estudios = file.readline()
-    victima.estuios = victima.estudios[victima.estudios.find(":")+2:]
+    victima.estudios = victima.estudios[victima.estudios.find(":")+2:]
 
     victima.sitios = file.readline()
     victima.sitios = victima.sitios[victima.sitios.find(":")+2:]
@@ -143,8 +143,30 @@ def combinar(palabras, palabrasCopia, extras):
 def armarListaDeDatos(victima):
     """Armamos la lista con los datos de la victima"""
 
+    #Ya agregamos los atributos por separado.
+    #TO DO:
+        #Quitar los espacios de los elementos que estan separados (ej: Mr. Robot)
+        #Quitar los saltos de linea (ej: Naruto\n)
+
     listaDeDatos = []
 
+    for atributo in victima.__dict__:
 
+        if (type(victima.__dict__[atributo]) == int):
+            listaDeDatos.append(victima.__dict__[atributo])
+            continue
+
+        if (victima.__dict__[atributo].find(",") > 0):
+
+            #Esto es una lista
+            lista = victima.__dict__[atributo].split(', ')
+
+            for elemento in lista:
+                listaDeDatos.append(elemento)
+
+            #print("Esto es una lista")
+        else:
+
+            listaDeDatos.append(victima.__dict__[atributo])
 
     return listaDeDatos
