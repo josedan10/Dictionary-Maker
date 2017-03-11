@@ -146,7 +146,6 @@ def armarListaDeDatos(victima):
     #Ya agregamos los atributos por separado.
     #TO DO:
         #Quitar los espacios de los elementos que estan separados (ej: Mr. Robot)
-        #Quitar los saltos de linea (ej: Naruto\n)
 
     listaDeDatos = []
 
@@ -165,14 +164,13 @@ def armarListaDeDatos(victima):
                 if (elemento[len(elemento)-1]=='\n'):
                     elemento = elemento[:len(elemento)-1]
 
-                if (elemento == '-'):
-                    continue
                 listaDeDatos.append(elemento)
 
             #print("Esto es una lista")
         else:
 
-            if(victima.__dict__[atributo]=='-'):
+            if(victima.__dict__[atributo]=="-\n" or victima.__dict__[atributo]=="-"):
+                print("El atributo %s tiene el valor - y se esta imprimiendo.\n" % (atributo))
                 continue
 
             if (victima.__dict__[atributo][len(victima.__dict__[atributo]) - 1] == '\n'):
