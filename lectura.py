@@ -162,11 +162,21 @@ def armarListaDeDatos(victima):
             lista = victima.__dict__[atributo].split(', ')
 
             for elemento in lista:
+                if (elemento[len(elemento)-1]=='\n'):
+                    elemento = elemento[:len(elemento)-1]
+
+                if (elemento == '-'):
+                    continue
                 listaDeDatos.append(elemento)
 
             #print("Esto es una lista")
         else:
 
+            if(victima.__dict__[atributo]=='-'):
+                continue
+
+            if (victima.__dict__[atributo][len(victima.__dict__[atributo]) - 1] == '\n'):
+                victima.__dict__[atributo] = victima.__dict__[atributo][:len(victima.__dict__[atributo]) - 1]
             listaDeDatos.append(victima.__dict__[atributo])
 
     return listaDeDatos
