@@ -27,6 +27,7 @@ from Conteo import *
 from lectura import *
 from menus import *
 #from objetos import *
+from construccion import *
 
 
 print("BIENVENIDO A DICTONARY MAKER")
@@ -54,6 +55,7 @@ while True:
 
         listaDeDatos = armarListaDeDatos(victima)
 
+        crearDiccionario(listaDeDatos)
         print(listaDeDatos)
 
     elif (opcion == 3):

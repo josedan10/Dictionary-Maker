@@ -133,12 +133,6 @@ def leerArchivoDatos(nombreDeArchivo):
 
     return victima
 
-def combinar(palabras, palabrasCopia, extras):
-    """Combinacion de todas las palabras que hay en el archivo de datos"""
-
-
-
-    return
 
 def armarListaDeDatos(victima):
     """Armamos la lista con los datos de la victima"""
@@ -151,30 +145,39 @@ def armarListaDeDatos(victima):
 
     for atributo in victima.__dict__:
 
-        if (type(victima.__dict__[atributo]) == int):
-            listaDeDatos.append(victima.__dict__[atributo])
-            continue
+        if not (victima.__dict__[atributo] == "-\n" or victima.__dict__[atributo] == "-"):
 
-        if (victima.__dict__[atributo].find(",") > 0):
 
-            #Esto es una lista
-            lista = victima.__dict__[atributo].split(', ')
+            if (type(victima.__dict__[atributo]) == int):
+                listaDeDatos.append(str(victima.__dict__[atributo]))
 
-            for elemento in lista:
-                if (elemento[len(elemento)-1]=='\n'):
-                    elemento = elemento[:len(elemento)-1]
+            elif (victima.__dict__[atributo].find(",") > 0):
 
-                listaDeDatos.append(elemento)
+                #Esto es una lista
+                lista = victima.__dict__[atributo].split(', ')
 
-            #print("Esto es una lista")
-        else:
+                for elemento in lista:
 
-            if(victima.__dict__[atributo]=="-\n" or victima.__dict__[atributo]=="-"):
-                print("El atributo %s tiene el valor - y se esta imprimiendo.\n" % (atributo))
-                continue
+                    if (elemento[len(elemento)-1]=='\n'):
+                        elemento = elemento[:len(elemento)-1]
 
-            if (victima.__dict__[atributo][len(victima.__dict__[atributo]) - 1] == '\n'):
+                    if (elemento.find("/") > 0):
+                        datos = elemento.split("/")
+
+                        for dato in datos:
+                            listaDeDatos.append(str(dato))
+                    else:
+                        listaDeDatos.append(elemento)
+
+
+            elif (victima.__dict__[atributo][len(victima.__dict__[atributo]) - 1] == '\n'):
                 victima.__dict__[atributo] = victima.__dict__[atributo][:len(victima.__dict__[atributo]) - 1]
-            listaDeDatos.append(victima.__dict__[atributo])
+                if (victima.__dict__[atributo].find("/") > 0):
+                    datos = elemento.split("/")
+
+                    for dato in datos:
+                        listaDeDatos.append(dato)
+                else:
+                    listaDeDatos.append(victima.__dict__[atributo])
 
     return listaDeDatos
